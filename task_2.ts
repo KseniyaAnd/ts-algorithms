@@ -7,13 +7,13 @@
 
 
 function arrayDiff<T>(arr1: T[], arr2: T[]): T[] {
+    const set1 = new Set(arr1);
+    const set2 = new Set(arr2);
 
-    let res = []
-//
-    res.push(arr1.filter(x => !arr2.includes(x)));
-    res.push(arr2.filter(x => !arr1.includes(x)))
+    const res1 = arr1.filter(x => !set2.has(x));
+    const res2 = arr2.filter(x => !set1.has(x));
 
-    return res;
+    return [...res1, ...res2];
 }
 
 console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4']));
