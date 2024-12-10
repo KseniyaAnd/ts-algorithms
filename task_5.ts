@@ -4,7 +4,7 @@
 // Функция возвращает новый массив, который наполнен теми значениями,
 //     которые не передавались как второй и последующие аргументы функции
 
-function without (arr: number[], ...nums: number[]): number[] {
+function without <T>(arr: T[], ...nums: T[]): T[] {
     return arr.filter(x => !nums.includes(x));
 }
 
