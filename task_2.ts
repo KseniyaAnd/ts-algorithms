@@ -16,4 +16,36 @@ function arrayDiff<T>(arr1: T[], arr2: T[]): T[] {
     return [...res1, ...res2];
 }
 
-console.log(arrayDiff<number | string>([1, 3, 3, 4], [1, 3, '4']));
+// console.log(arrayDiff<number | string | boolean>([1, 3, 3, 4, true], [1, 3, '4']));
+
+
+// enum ETest {
+//     SUCCESS,
+//     ERROR,
+//     WARNING
+// }
+//
+//
+// function test(types: ETest): unknown {
+//     switch (types) {
+//         case ETest.ERROR:
+//             console.log(1);
+//             break;
+//         case ETest.SUCCESS:
+//             console.log(2);
+//             break;
+//         default:
+//             neverReached(types)
+//     }
+// }
+//
+// function neverReached(never: never) {
+//     console.error('Smth went wrong')
+// }
+//
+// test(ETest.WARNING);
+
+
+// test<ObjTestI>(obj);
+
+// any vs unknown vs never vs void
