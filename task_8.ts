@@ -6,16 +6,16 @@
 // console.log(obj.x, obj.y, obj.myFunc()); // 12, 23, 35
 //
 
-const factory = (xValue: number, yValue: number, funcSumName: string) => {
+const factory = (x: number, y: number, funcSumName: string) => {
     return {
-        x: xValue,
-        y: yValue,
+        x,
+        y,
         [funcSumName]: function () {
             return this.x + this.y;
         }
     }
 }
-const obj = factory(12, 28, 'myhFunc');
+const obj = factory(12, 23, 'myhFunc');
 
 console.log(obj.x, obj.y, obj.myhFunc()); // 12, 23, 35
 
