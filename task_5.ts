@@ -8,4 +8,4 @@ function without <T>(arr: T[], ...nums: T[]): T[] {
     return arr.filter(x => !nums.includes(x));
 }
 
-console.log(without([2, 1, 2, 3], 1, 2));
+console.log(without<number | string>([2, 1, 2, 3], 1, 2));

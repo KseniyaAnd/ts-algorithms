@@ -16,4 +16,4 @@ function arrayDiff<T>(arr1: T[], arr2: T[]): T[] {
     return [...res1, ...res2];
 }
 
-console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4']));
+console.log(arrayDiff<number | string>([1, 3, 3, 4], [1, 3, '4']));

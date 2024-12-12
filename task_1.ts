@@ -31,5 +31,5 @@ function any<T>(arr: T[], callback?: (value:number) => boolean): boolean {
     return false
 }
 
-console.log(any([0, 1, 2, 0], x => x >= 2));
-console.log(any([0, '', 2, 0], x => x >= 2));
+console.log(any<number | string>([0, 1, 2, 0], x => x >= 2));
+console.log(any<number | string>([0, '', 2, 0], x => x >= 2));
