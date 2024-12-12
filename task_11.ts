@@ -15,17 +15,35 @@
 // Если все элементы отрицательные – ничего не берём(подмассив пустой) и сумма равна «0»
 
 
-function getMaxSubSum(arr: number[]): number {
-    let maxSum = 0;
-    let currentSum = 0;
+function getMaxSubSum(arr: number[], h: number): number {
+    let winSum = Number.MIN_VALUE;
 
-    for (let num of arr) {
-        currentSum += num
-        if (currentSum > maxSum) maxSum = currentSum;
-        if (currentSum < 0) currentSum = 0;
+    for (let i = 0; i < h; i++) {
+        winSum += arr[i];
+        console.log('winSum: ', winSum)
+    }
+
+    let maxSum = winSum
+
+    for (let i = h; i < arr.length; i++) {
+        console.log('arr[i]', arr[i])
+        winSum += arr[i] - arr[i - h];
+        maxSum =  Math.max(maxSum, winSum);
     }
 
     return maxSum;
+
+
+    // let maxSum = 0;
+    // let currentSum = 0;
+    //
+    // for (let num of arr) {
+    //     currentSum += num
+    //     if (currentSum > maxSum) maxSum = currentSum;
+    //     if (currentSum < 0) currentSum = 0;
+    // }
+    //
+    // return maxSum
 
     // Кадана
     // let currentSum = 0;  // Текущая сумма
@@ -39,5 +57,5 @@ function getMaxSubSum(arr: number[]): number {
     // return maxSum;
 };
 
-console.log(getMaxSubSum([-1, 2, 3, -9]));
+console.log(getMaxSubSum([-1, 2, 3, -9], 2));
 
