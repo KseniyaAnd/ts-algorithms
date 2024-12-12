@@ -14,22 +14,25 @@
 
 
 function any<T>(arr: T[], callback?: (value:number) => boolean): boolean {
-    if (callback) {
-        for (let value of arr) {
-            if (callback(value)) {
-                return true
-            }
-        }
-    } else {
-        for (let value of arr) {
-            if (value) {
-                return true
-            }
-        }
-    }
+    // if (callback) {
+    //     for (let value of arr) {
+    //         if (callback(value)) {
+    //             return true
+    //         }
+    //     }
+    // } else {
+    //     for (let value of arr) {
+    //         if (value) {
+    //             return true
+    //         }
+    //     }
+    // }
+    //
+    // return false
 
-    return false
+    return arr.some(() => callback);
 }
 
-console.log(any<number | string>([0, 1, 2, 0], x => x >= 2));
-console.log(any<number | string>([0, '', 2, 0], x => x >= 2));
+// console.log(any<number | string>([0, 1, 2, 0], x => x >= 2));
+// console.log(any<number | string>([0, '', 2, 0], x => x >= 2));
+console.log(any([0, 0, 0, 0])); // -> false
