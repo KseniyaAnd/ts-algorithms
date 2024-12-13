@@ -16,22 +16,22 @@
 
 
 function getMaxSubSum(arr: number[], h: number): number {
-    let winSum = Number.MIN_VALUE;
-
-    for (let i = 0; i < h; i++) {
-        winSum += arr[i];
-        console.log('winSum: ', winSum)
-    }
-
-    let maxSum = winSum
-
-    for (let i = h; i < arr.length; i++) {
-        console.log('arr[i]', arr[i])
-        winSum += arr[i] - arr[i - h];
-        maxSum =  Math.max(maxSum, winSum);
-    }
-
-    return maxSum;
+    // let winSum = Number.MIN_VALUE;
+    //
+    // for (let i = 0; i < h; i++) {
+    //     winSum += arr[i];
+    //     console.log('winSum: ', winSum)
+    // }
+    //
+    // let maxSum = winSum
+    //
+    // for (let i = h; i < arr.length; i++) {
+    //     console.log('arr[i]', arr[i])
+    //     winSum += arr[i] - arr[i - h];
+    //     maxSum =  Math.max(maxSum, winSum);
+    // }
+    //
+    // return maxSum;
 
 
     // let maxSum = 0;
