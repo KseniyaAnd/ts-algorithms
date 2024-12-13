@@ -6,8 +6,17 @@
 //
 // alert( unique(strings) ); // [‘aaa', ‘zzz', ‘xxx', ‘bbb', ‘ccc']
 
-function unique<T> (arr: T[]): T[] {
-    return Array.from(new Set(arr));
+function unique<T>(arr: T[]): T {
+    //return Array.from(new Set(arr));
+    return arr.reduce((acc, i) => {
+        if (acc[i]) {
+            acc[i] += 1;
+        } else {
+            acc[i] = 1;
+        }
+        return acc;
+    }, {})
 }
-let strings = ['aaa', 'aaa', 'zzz', 'xxx', 'aaa', 'bbb', 'aaa',  'xxx', 'ccc'];
-console.log(unique(strings))
+
+let strings = ['aaa', 'aaa', 'zzz', 'xxx', 'aaa', 'bbb', 'aaa', 'xxx', 'ccc'];
+console.log(unique<number[] | string[]>(strings))
