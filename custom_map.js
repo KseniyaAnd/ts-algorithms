@@ -10,4 +10,4 @@ Array.prototype.customMap = function (callback) {
 
 let arr = [1, 2, 3];
 arr = arr.customMap(e => e * 2);
-onsole.log(arr);
+console.log(arr);
