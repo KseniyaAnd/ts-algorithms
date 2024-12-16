@@ -12,8 +12,8 @@
 
 function persistence(num: number): number {
     if (num.toString().length === 1) return 0;
-    let res = num.toString().split('').reduce((acc, el) => acc * Number(el), 1)
+    const res = num.toString().split('').reduce((acc, el) => acc * Number(el), 1)
     return 1 + persistence(res);
 }
 
-console.log(persistence(4));
+console.log(persistence(39));
