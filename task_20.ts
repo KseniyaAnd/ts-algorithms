@@ -7,7 +7,7 @@
 // divisors(13); // should return "13 is prime"
 
 function divisors(num: number):number | string {
-    let divisors = [];
+    const divisors = [];
 
     for (let i = 2; i < num; i++) {
         if (num % i === 0) divisors.push(i)
